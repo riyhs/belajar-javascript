@@ -16,6 +16,12 @@
             transition: .6s;
         }
 
+        button {
+            width: 100px;
+            height: 25px;
+            font-size: 16px;
+        }
+
         .malam {
             background: rgb(34, 34, 34);
             color: rgb(244, 244, 244);
@@ -25,13 +31,21 @@
             background: #fff;
             color: rgb(0, 0, 0);
         }
+
+        .hide {
+            display: none !important;
+        }
+
+        .show {
+            display: block !important;
+        }
     </style>
 </head>
 <body id="target">
-    <h1>Mode Malam</h1>
+    <h1>Mode Malam & Mode Siang</h1>
 
-    <button onclick="malam()">Malam</button>
-    <button onclick="siang()">Siang</button>
+    <button id="id-malam" onclick="malam()">Malam</button>
+    <button class="hide" id="id-siang" onclick="siang()">Siang</button>
 
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi labore sed vitae ipsum non harum aliquam iusto, error qui ad, vel vero itaque nemo odit eius maiores! Voluptas, facilis cum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, minima nemo in corporis nostrum architecto quasi temporibus nihil ex. Dolor maxime rerum non a harum exercitationem dolores quia! Molestias, quisquam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem excepturi facilis similique magni magnam fugit aliquam nostrum nulla. Enim nisi veritatis similique rerum illum qui porro tempora est vero quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore laborum soluta labore. Reprehenderit mollitia natus tempore sed temporibus. Eum tenetur, quisquam molestias praesentium atque velit adipisci quasi eveniet quaerat reiciendis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore voluptas adipisci dolore nam tenetur necessitatibus illum temporibus porro ab neque debitis, eum ut deserunt recusandae voluptatem sapiente dignissimos ea labore!
@@ -44,12 +58,22 @@
     </p>
 
     <script>
+        var target = document.getElementById("target");
+        var day = document.getElementById("id-siang");
+        var night = document.getElementById("id-malam");
+
         function malam() {
-            document.getElementById("target").className= "malam";
+            target.className= "malam";
+            night.className= "hide";
+            day.className= "show";
         }
+            
         function siang() {
-            document.getElementById("target").className= "siang";
+            target.className= "siang";
+            day.className = "hide";
+            night.className = "show";
         }
+
     </script>
 </body>
 </html>
