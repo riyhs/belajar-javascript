@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        form label {
+            font-size: 16px;
+        }
+
+        form input {
+            width: 80px;
+            height: 20px;
+            padding: 4px 10px;
+            font-size: 14px;
+        }
+
+        #submit {
+            width: 90px;
+            height: 32px;
+            padding: 4px 10px;
+            font-size: 14px;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mencari rata-rata nilai</h1>
+
+    <form onsubmit="return false">
+        <label>Masukan Nilai</label> <br>
+
+        <input type="number" id="input-form1" value="" min="0" max="100" required placeholder="Nilai Anda">
+        <input type="number" id="input-form2" value="" min="0" max="100" required placeholder="Nilai Anda">
+        <input type="number" id="input-form3" value="" min="0" max="100" required placeholder="Nilai Anda">
+        <input type="number" id="input-form4" value="" min="0" max="100" required placeholder="Nilai Anda">
+       
+        <button id="submit">Hasil</button>
+    </form>
+
+    <h3>Rata-rata = <span id="rata2"></span> </h3>
+    <h3>Nim = <span id="nim"></span></h3>
+
+    <p>Copyright 2019 | Riyaldi Hasan</p>
+
+    <script>
+        document.getElementById("submit").addEventListener("click",validasi);
+        document.getElementById("submit").addEventListener("click",tampilkan_nilai);
+
+        function tampilkan_nilai(){
+   
+            var nilai1 = document.getElementById("input-form1").value;
+            var nilai2 = document.getElementById("input-form2").value;
+            var nilai3 = document.getElementById("input-form3").value;
+            var nilai4 = document.getElementById("input-form4").value;
+            
+            var angka = Number(nilai1) + Number(nilai2) + Number(nilai3) + Number(nilai4);
+            
+            var rata_rata = angka / 4; 
+            var nim = angka / 10;
+
+            document.getElementById("rata2").innerHTML=rata_rata;
+            document.getElementById("nim").innerHTML=nim;
+        }
+
+        function validasi() {
+            var nilai1 = document.getElementById("input-form1").value;
+            var nilai2 = document.getElementById("input-form2").value;
+            var nilai3 = document.getElementById("input-form3").value;
+            var nilai4 = document.getElementById("input-form4").value;
+
+            if (nilai1 != "" && nilai2 != "" && nilai3 != "" && nilai4 != ""){
+                return true;
+            } else {
+                alert("Anda harus mengisi data dengan lengkap!");
+            }
+        }
+    
+    </script>
+</body>
+</html>
