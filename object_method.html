@@ -1,0 +1,45 @@
+<!<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Object Javascrip</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <h1>Object Javascript</h1>
+    <script>
+    var profil = {
+        nama : "Riyaldi Hasan Setiawan",
+        kelas : 9,
+        umur : 15,
+        negara : "Indonesia",
+        hobi : {
+            1 : "gaming",
+            2 : "programming",
+            3 : "sleeping"
+        },
+        game: function () { return "GAMING MODE ON!"; },
+        job : function(status) { return "Status = " + status; }
+    };
+
+    profil.alamat = "candirejo";
+    profil.nama = "Riyhs";
+
+    console.log("Nama = " + profil.nama);
+    console.log("Kelas = " + profil.kelas);
+    console.log("Umur = " + profil.umur);
+    console.log("Negara = " + profil.negara);
+    console.log("Alamat = " + profil.alamat);
+    console.log("Hobi = " + profil.hobi[2]);
+    console.log("Mode = " + profil.game());
+    console.log(profil.job("Pelajar"));
+
+    var prop;
+    for (prop in profil.hobi) {
+        console.log("My Hobi = " + profil.hobi[prop]);
+    }
+
+    </script>
+</body>
+</html>

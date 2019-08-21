@@ -1,0 +1,153 @@
+<html>
+
+<head>
+    <title> Rata-rata nilai </title>
+    <meta charset="utf-8">
+    <style>
+        body {
+            margin: 30px;
+            font-size: 10px;
+        }
+        
+        h1 {
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        p {
+            font-size: 15px;
+            font-family: sans-serif;
+        }
+        
+        div {
+            padding: 10px;
+            color: #fff;
+        }
+        
+        #bag_nilai {
+            background: rgb(77, 204, 130);
+        }
+        
+        #bag_hasil {
+            background: rgb(231, 76, 76);
+        }
+        
+        #bag_nim {
+            background: rgb(187, 149, 24);
+        }
+        
+        #bag_lulus {
+            background: rgb(3, 134, 157);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1> Rata-rata nilai ujian </h1>
+    <div id="bag_nilai">
+        <h2 id="kelas"></h2>
+        <p id="nilai_ipa"></p>
+        <p id="nilai_bi"></p>
+        <p id="nilai_mat"></p>
+        <p id="nilai_eng"></p>
+    </div>
+
+    <div id="bag_hasil">
+        <p id="hasil"> </p>
+    </div>
+    <div id="bag_nim">
+        <p id="nim"></p>
+    </div>
+    <div id="bag_lulus">
+        <p id="lulus"> </p>
+    </div>
+
+    <script type="text/javascript">
+        // NILAI NILAI 
+        var nilaiIpa = 10;
+        var nilaiMatematika = 77;
+        var nilaiBI = 75;
+        var nilaiEnglish = 80;
+
+        var ipa = nilaiIpa;
+        var mat = nilaiMatematika;
+        var bi = nilaiBI;
+        var eng = nilaiEnglish;
+        // AKHIRAN NILAI NILAI 
+        // PERHITUNGAN 
+        var total = ipa + mat + bi + eng;
+        var totalSd = total - eng;
+        var rataRata = total / 4;
+        var nim = total / 10;
+        var nimSd = totalSd / 10;
+        var rataRataSd = totalSd / 3;
+        // AKHIRAN PERHITUNGAN 
+        // PERNYATAAN LULUS 
+        var lulus = "=== Selamat Anda LULUS ===";
+        var tidakLulus = "=== Maaf, Anda tidak LULUS ===";
+        // AKHIRAN PERNYATAAN LULUS 
+
+
+
+
+        if (jenjang === "sma") {
+
+            document.getElementById('kelas').innerHTML = "SD Kelas 6";
+            document.getElementById('nilai_ipa').innerHTML = "IPA = " + ipa;
+            document.getElementById('nilai_bi').innerHTML = "Bahasa Indonesia = " + bi;
+            document.getElementById('nilai_mat').innerHTML = "Matematika = " + mat;
+
+            document.getElementById('hasil').innerHTML = "Rata-rata = " + rataRataSd;
+            document.getElementById('nim').innerHTML = "Nim anda = " + nimSd + " dari 30";
+
+        } else if (jenjang === "smp") {
+
+            document.getElementById('kelas').innerHTML = "SMP kelas 9";
+            document.getElementById('nilai_ipa').innerHTML = "IPA = " + ipa;
+            document.getElementById('nilai_bi').innerHTML = "Bahasa Indonesia = " + bi;
+            document.getElementById('nilai_mat').innerHTML = "Matematika = " + mat;
+            document.getElementById('nilai_eng').innerHTML = "Bahasa Inggris = " + eng;
+
+            document.getElementById('hasil').innerHTML = "Rata-rata = " + rataRata;
+            document.getElementById('nim').innerHTML = "Nim anda = " + nim + " dari 40";
+
+        } else {
+
+            document.getElementById('kelas').innerHTML = "MASUKAN DATA DENGAN BENAR";
+            document.getElementById('nilai_ipa').innerHTML = "DATA SALAH";
+            document.getElementById('nilai_bi').innerHTML = "DATA SALAH";
+            document.getElementById('nilai_mat').innerHTML = "DATA SALAH";
+
+            document.getElementById('hasil').innerHTML = "DATA SALAH";
+            document.getElementById('nim').innerHTML = "DATA SALAH";
+        }
+
+        if (jenjang === "sd") {
+            if (rataRataSd > 75) {
+                document.getElementById('lulus').innerHTML = lulus;
+            } else {
+                document.getElementById('lulus').innerHTML = tidakLulus;
+            }
+        } else if (jenjang === "smp") {
+            if (rataRata > 75) {
+                document.getElementById('lulus').innerHTML = lulus;
+            } else {
+                document.getElementById('lulus').innerHTML = tidakLulus;
+            }
+        } else {
+            document.getElementById('lulus').innerHTML = "GOBLOK!!!";
+        }
+
+        // ---TO DO LIST---
+        // OTOMATIS MENGGANTI WARNA BACKGROUND DI BAGIAN RATA-RATA
+        // LULUS = HIJAU
+        // TIDAK LULUS = MERAH
+    </script>
+</body>
+
+</html>

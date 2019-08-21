@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>belajar perulangan javascript</h1>
+
+    
+    <script>
+    // for (var num = 95; num >= 0; num = num - 5) {
+    //     console.log('500' + '-' + (num * 5) + ' = ' ,500 - num * 5);
+    // }
+
+    // ============================ FOR LOOP ===========================
+
+    // for(var star = 1; star <= 10; star++) {
+
+    //     for(var bint = 1; bint <= star; bint++) {
+    //         document.write('*');
+    //     }
+    //     document.write('<br>');
+    
+    // }
+
+    // for(var star = 1; star <= 10; star++) {
+
+    //     for(var bint = star; bint <= 10; bint++) {
+    //         document.write('*');
+    //     }
+    //     document.write('<br>');
+
+    // }
+
+    // var num = 1; // ==== KUADRAT ==== //
+    // for(num; num <= 100; num = num + 1 ) {
+    //     console.log(num + ' kuadrat 3 = ' + num*num*num)
+    // }
+
+    // ==================================================================
+
+    // ============================ WHILE LOOP ==========================
+
+        // var num = 95;
+        // while( num >= 0) {
+
+        //     console.log( 500 + ' -' ,500 - num*5 + ' = ' + num*5);
+        //     num = num -5;
+        // }
+
+    // ==================================================================
+
+    // =========== MENAMPILKAN ELEMEMT ARRAY MENGGUNAKAN LOOP ===========
+    // let siswa = ['budi', 'tono', 'joko', 'jhon', 'deni'];
+    // let jumlahSiswa = siswa.length;
+
+    // console.log('Jumlah siswa = ' + jumlahSiswa);
+
+    // for(var i = 0; i < jumlahSiswa; i++) {
+    //     console.log(siswa[i]);
+    // }
+
+    // =================================================================
+
+    // var a = 400;
+    // var b = 3/4 * a + 120;
+    // var c = 2/3 * b + 200;
+    // var d = 3/4 * c + 140;
+
+    // var e = a + b + c + d ;
+    // var f = 1800;
+    // var g = e - f;
+
+    // if(e-f === 0){
+    //     console.log("hasil = " + g + " = benar");
+    // } else {
+    //     console.log("hasil = " + g + " = salah");
+    // }
+
+    // console.log("a = " +a);
+    // console.log("b = " +b);
+    // console.log("c = " +c);
+    // console.log("d = " +d);
+    // console.log("a+b+c+d = " +e);
+
+    // ------------------------------------------------------------
+    
+    for(var i = 1; i <= 6; i++) {
+
+        for(var a = 1; a <= i; a++) {
+            document.write('a');
+        }
+        document.write('<br>');
+    }
+
+    for(var b = 6; b >= 0; b--) {
+        
+        for(var c = 1; c <= b; c++ ){
+            document.write('c');
+        }
+        document.write('<br>');
+    }
+
+
+    // ------------------------------------------------------------
+
+    </script>
+</body>
+</html>

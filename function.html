@@ -1,0 +1,102 @@
+<!<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Belajar Function</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+</head>
+<body>
+    <h1>Belajar Function JS</h1>
+    <!-- function rata-rata nilai -->
+    <script>
+
+    // -------------------------------------
+    // var a = 80;
+    // var b = 50;
+    // var c = 60;
+    // var d = 70;
+    
+    // function rerata() {
+    //    var nilai = (a + b + c + d) / 4;
+
+    //    return nilai;
+    // }
+    // var text = "Rata-Rata = "
+    // console.log(text + rerata());
+
+    // var ggg = rerata();
+
+    // if (rerata() > 75) {
+    //     console.log('ANDA LULUS');
+    // }else {
+    //     console.log('GOBLOK KAMU');
+    // }
+    // ------------------------------------
+
+    // ---------------- SALAM --------------------
+
+    // function salam() {
+    //     var salamPagi = ['selamat pagi', 'good morning', 'guten morgen', 'sugeng enjing'];
+    //     return salamPagi;
+    // }
+
+    // var salam = salam();
+    // var panjangSalam = salam.length;
+
+    // for( var i = 0; i < panjangSalam; i++) {
+    //     console.log(salam[i]);
+    // }
+
+    // ------------------------------------
+
+    // ----------------- RATA RATA -------------------
+    
+    // function rata2(a = 100,b = 100,c = 100,d = 100) {
+    //     const nilai = (a+b+c+d) / 4;
+    //     console.log('Rata-rata dari '+ a + ' , ' + b + ' , ' + c + ' , '+ d + ' = ' + nilai);
+    // }
+
+    // rata2(88, 88, 90, 72);
+    // rata2(94, 82, 90, 72);
+
+    // ------------------------------------
+
+    // -------------- ARGUMENTS OBJECT -----------------
+
+    // function angka() {
+    //     console.log(arguments[4]);
+    //     console.log(arguments[3]);
+    //     console.log(arguments[2]);
+    //     console.log(arguments[1]);
+    // }
+
+    // angka(1,2,3,4,5);
+
+    // function rata2() {
+    //     let totalNumb = arguments.length;
+    //     return totalNumb;
+    // }
+
+    // let a1 = rata2(2,3,4);
+    // console.log(a1);
+
+    function rata2(){
+        let banyakArg = arguments.length;
+        let hasil = 0;
+
+        for(var i = 0; i < banyakArg; i++){
+            hasil = hasil + arguments[i];
+        }
+
+        return hasil / banyakArg;
+    }
+
+    let a = rata2(50, 60, 70, 80);
+    console.log(a);
+
+    // ------------------------------------
+
+    </script>
+</body>
+</html>

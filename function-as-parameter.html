@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bekg {
+            background: red;
+        }
+
+        .teks {
+            font-size: 23px;
+        }
+
+        .bekg-btn {
+            background: blue;
+        }
+    </style>
+</head>
+<body id="body"> 
+    <p id="teks">Ini Teks Biasa </p>
+    <button id="btn" type="submit">Button 1</button>
+
+    <button type="submit" onsubmit="satu()"> SUBMIT</button>
+
+    <script>
+        function satu( bg, color, bgBtn){
+            var bg = document.getElementById("body").addClass="bekg";
+            var color = document.getElementById("teks").addClass="tex";
+            var bgBtn = document.getElementById("btn").addClass="bekg-btn";
+        }
+
+        return satu(bg, color, bgBtn)
+    </script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+
+    <script>
+        // PROGRAM MENUKAR NILAI
+        function tukarNilai(a,b){
+            var a,b;
+
+            console.log('Nilai sebelum di tukar = ' + a + ' dan ' + b);
+
+            a = a + b;
+            b = a - b;
+            a = a - b;
+
+            console.log('Nilai setelah di tukar = ' + a + ' dan ' + b);
+        }
+
+        tukarNilai(4,9);
+
+        // PROGRAM HITUNG GAJI KARYAWAN
+        function gajiKaryawan(namaKar,gaji) {
+            const pajak = .15*gaji;
+            const tunjangan = .02*gaji;
+            
+            gajiBersih = gaji - pajak + tunjangan;
+
+            console.log('Gaji bersih untuk '+ namaKar + ' adalah sebesar Rp.'+ gajiBersih+ ' juta');
+        }
+
+        gajiKaryawan('Sukir', 5);
+
+        //PROGRAM MENCARI LUAS SEITIGA  
+        function luasLingkaran(jariJari) {
+            const pi = 3.14;
+            const luas = pi * pi * jariJari;
+
+            console.log('Luas lingkaran berjari-jari ' + jariJari + ' = ' + luas + ' cm persegi');
+        }
+        luasLingkaran(7);
+
+        //PROGRAM MENCARI LUAS SEGI EMPAT
+        function luasSegiEmpat(panjang, lebar) {
+            const luas = panjang * lebar;
+
+            console.log('Luas segi empat dengan panjang ' + panjang + ' cm dan lebar ' + lebar + ' cm = ' + luas + ' cm persegi');
+        }
+        luasSegiEmpat(75, 50);
+
+        //PROGRAM MENCARI TITIK TENGAH DARI DUA BUAH NILAI 
+        function titikTengah(x1,x2,y1,y2) {
+
+            const hasilX = (x1 + x2) / 2;
+            const hasilY = (y1 + y2) / 2;
+
+            console.log('Titik tengah dari koordinat ' + x1 + ',' + x2 + ' dan ' + y1 + ',' + y2 + ' adalah ' + hasilX + ',' + hasilY );
+        }
+        titikTengah(2,4,4,6);
+
+        // PRORAM KONVERSI WAKTU 
+        function jamKeMenit(jam){
+            const menit = jam * 60;
+
+            console.log(jam + " jam adalah " + menit + ' menit')
+        }
+
+        function jamKeDetik(jam){
+            const detik = jam * 60 * 60;
+
+            console.log(jam + " jam adalah " + detik + ' detik')
+        }
+
+        function menitKeDetik(menit){
+            const detik = menit * 60;
+
+            console.log(menit + " menit adalah " + detik + ' detik')
+        }
+
+        function detikKeMenit(detik){
+            const menit = detik / 60;
+
+            console.log(detik + " detik adalah " + menit + ' menit')
+        }
+
+        function detikKeJam(detik){
+            const jam = detik / 60 / 60;
+
+            console.log(detik + " detik adalah " + jam + ' jam')
+        }
+
+        function menitKeJam(menit){
+            const jam = menit / 60;
+
+            console.log(menit + " menit adalah " + jam + ' jam')
+        }
+        
+        // KONVERSI HARI
+        function hariKeJam(hari){
+            const jam = hari * 24;
+
+            console.log(hari + " hari adalah " + jam + ' jam')
+        }
+
+        function hariKeMenit(hari){
+            const menit = hari * 24 * 60 ;
+
+            console.log(hari + " hari adalah " + menit + ' menit')
+        }
+
+        function hariKeDetik(hari){
+            const detik = hari * 24 * 60 * 60;
+
+            console.log(hari + " hari adalah " + detik + ' detik')
+        }
+
+        function jamKeHari(jam){
+            const hari = jam / 24;
+
+            console.log(jam + " jam adalah " + hari + ' hari')
+        }
+
+        function menitKeHari(menit){
+            const hari = menit / 24 / 60;
+
+            console.log(menit + " menit adalah " + hari + ' hari')
+        }
+
+        function detikKeHari(detik){
+            const hari = detik / 24 / 60 / 60;
+
+            console.log(detik + " detik adalah " + hari + ' hari')
+        }
+
+        jamKeMenit(1)
+        jamKeDetik(1)
+        menitKeDetik(1)
+        menitKeJam(1)
+        detikKeMenit(1)
+        detikKeJam(1)
+
+        hariKeJam(1);
+        hariKeMenit(1);
+        hariKeDetik(1);
+        jamKeHari(24);
+        menitKeHari(24*60);
+        detikKeHari(24*60*60);
+
+        // MODULUS & DIV JAVASCRIPT
+
+        function div(numDiv2, pembagiDiv1) {
+            var pengurang = numDiv2 % pembagiDiv1;
+            var angkaPas = numDiv2 - pengurang;
+            var hasil = angkaPas / pembagiDiv1;
+
+            return hasil;
+        }
+
+        // SOAL LATIAN BAB 6 
+        // 1. KONVERSI DETIK KE HARI, JAM, MENIT, DETIK
+        
+        function detikKeWaktu(durasi) {
+            var hari = div(durasi, 86400);
+
+            var sisaHari = durasi % 86400; // Mencari sisa hasil bagi dengan me modulus durasi dengan total detik dalam 1 hari
+            var jam = div(sisaHari, 3600); // Membagi sisa hari dengan total detik dalam 1 jam
+
+            var sisaJam = sisaHari % 3600;
+            var menit = div(sisaJam, 60);
+
+            var sisaMenit = sisaJam % 60;
+            var detik = div(sisaMenit, 1);
+
+            var hasil = durasi + ' detik sama dengan ' + hari + ' hari, ' + jam + ' jam, ' + menit + ' menit ' + detik + ' detik' ;
+            return hasil;
+        }
+
+        console.log(detikKeWaktu(8640));
+
+        // 2. KONVERSI HARI KE TAHUN , BULAN, JAM
+        
+        function konversiHari(durasi) {
+            var tahun = div(durasi, 365);
+
+            var sisaTahun = durasi % 365;
+            var bulan = div(sisaTahun, 30);
+
+            var sisaBulan = sisaTahun % 30;
+            var hari = div(sisaBulan, 1)
+
+            var hasil = durasi + ' hari sama dengan ' + tahun + ' tahun, ' + bulan + ' bulan, ' + hari + ' hari';
+            return hasil;
+        }
+
+        console.log(konversiHari(40));
+
+        // 3. MEMPERTUKARKAN 3 NILAI
+        function tukar3Nilai(a,b,c){
+            console.log('Nilai sebelum ditukar');
+            console.log('A = ' + a);
+            console.log('B = ' + b);
+            console.log('C = ' + c);
+
+            a = a + b + c;
+            c = a - b - c; // a
+            b = a - b - c; // c
+            a = a - b - c; // b
+    
+
+            console.log('Nilai setelah ditukar');
+            console.log('A = ' + a);
+            console.log('B = ' + b);
+            console.log('C = ' + c);
+        }
+
+        tukar3Nilai(10,20,30);
+
+        // 4. KONVERSI NILAI UANG KELIPATAN 25
+        function KonversiUang25(uang) {
+
+            if (uang % 25 === 0) {
+                var konvRibuan = div(uang, 1000);
+
+                var sisaRibuan = uang % 1000;
+                var konv5Ratusan = div(sisaRibuan, 500);
+
+                var sisa5Ratusan = sisaRibuan % 500;
+                var konv1Ratusan = div(sisa5Ratusan, 100);
+
+                var sisa1Ratusan = sisa5Ratusan % 100;
+                var konv50 = div(sisa1Ratusan, 50);
+
+                var sisa50 = sisa1Ratusan % 50;
+                var konv25 = div(sisa50, 25);
+
+                console.log('Rp'+uang + ' setara dengan ' + konvRibuan + ' buah Rp1000 ditambah ' + konv5Ratusan + ' buah Rp500 ditambah ' + konv1Ratusan + ' buah Rp100 ditambah ' + konv50 + ' buah Rp50 ditambah ' + konv25 + ' buah Rp25');
+            } else{
+                console.log('Uang harus kelipatan 25');
+            }
+
+        }
+
+        KonversiUang25(23475);
+        
+
+        
+
+    </script>
+</body>
+</html>
